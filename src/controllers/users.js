@@ -1,14 +1,12 @@
-require('dotenv').config;
-const express = require('express');
-const app = express();
+//const express = require('express');
 
-const port = process.env.PORT || 3000;
-
-// middleware
-app.use(express.json());
-
-
-app.get('/users', (req, res) => {
+// GET
+/**
+ * 
+ * @param {express.Request} req 
+ * @param {express.Response} res 
+ */
+const getAllUsers = (req, res) => {
 
     const users = [
         {
@@ -22,10 +20,15 @@ app.get('/users', (req, res) => {
     ]
 
     res.json(users);    // status(200) por default
-});
+};
 
-
-app.post('/users', (req, res) => {
+// POST
+/**
+ * 
+ * @param {express.Request} req 
+ * @param {express.Response} res 
+ */
+const createUser = (req, res) => {
 
     const user = req.body;
     user.id = 5484;
@@ -36,10 +39,15 @@ app.post('/users', (req, res) => {
     }
 
     res.status(201).json(result);
-});
+};
 
-
-app.put('/users/:id', (req, res) => {
+// PUT
+/**
+ * 
+ * @param {express.Request} req 
+ * @param {express.Response} res 
+ */
+const updateUser = (req, res) => {
 
     const { id } = req.params;
     const user = req.body;
@@ -52,10 +60,15 @@ app.put('/users/:id', (req, res) => {
     }
 
     res.json(result);
-});
+};
 
-
-app.patch('/users/:id', (req, res) => {
+// PATCH
+/**
+ * 
+ * @param {express.Request} req 
+ * @param {express.Response} res 
+ */
+const updatePartialUser = (req, res) => {
 
     const { id } = req.params;
     const user = req.body;
@@ -67,10 +80,15 @@ app.patch('/users/:id', (req, res) => {
     }
 
     res.json(result);
-});
+};
 
-
-app.delete('/users/:id', (req, res) => {
+// DELETE
+/**
+ * 
+ * @param {express.Request} req 
+ * @param {express.Response} res 
+ */
+const deleteUser = (req, res) => {
     
     const { id } = req.params;
 
@@ -79,9 +97,12 @@ app.delete('/users/:id', (req, res) => {
     }
 
     res.json(result);
-});
+};
 
-
-app.listen(port, () => {
-    console.log(`##### App started. Port: ${port} #####`);
-});
+module.exports = {
+    getAllUsers,
+    createUser,
+    updateUser,
+    updatePartialUser,
+    deleteUser
+}
