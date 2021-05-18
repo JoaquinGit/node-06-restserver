@@ -59,7 +59,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserPostPut"
               }
             }
           }
@@ -93,7 +93,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserPostPut"
               }
             }
           }
@@ -150,6 +150,19 @@
             "type": "integer",          
             "example": "3"
           },
+          "name":{
+            "description": "The user name.",
+            "type":"string",          
+            "example":"Adrian"
+          }
+        }
+      },
+      "UserPostPut": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
           "name":{
             "description": "The user name.",
             "type":"string",          
