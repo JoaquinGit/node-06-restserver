@@ -3,5 +3,6 @@
 * Base configuration for APIs Rest
 * Express.js: GET, POST, PUT, PATCH, DELETE
 * Middlewares
-* Logger (Winston)
-* Documentation (Swagger)
+* Morgan logger
+* Winston logger
+* Swagger documentation

@@ -1,8 +1,7 @@
-//const express = require('express');
+const express = require('express');
 
-// GET
 /**
- * 
+ * GET
  * @param {express.Request} req 
  * @param {express.Response} res 
  */
@@ -19,20 +18,11 @@ const getAllUsers = (req, res) => {
         }
     ]
 
-    // prueba errorHandler
-    //throw new Error('Ocurrió un error al obtener los usuarios de la base de datos.');
-
-    // Para lanzar un 504. (Solución rápida sin crear clase Error propia)
-   /*  let error = new Error('Ocurrió un error al obtener los usuarios de la base de datos.');
-    error.code = 504;
-    throw error; */
-
-    res.json(users);    // status(200) por default
+    res.json(users);    
 };
 
-// POST
 /**
- * 
+ * POST
  * @param {express.Request} req 
  * @param {express.Response} res 
  */
@@ -49,9 +39,8 @@ const createUser = (req, res) => {
     res.status(201).json(result);
 };
 
-// PUT
 /**
- * 
+ * PUT
  * @param {express.Request} req 
  * @param {express.Response} res 
  */
@@ -70,9 +59,8 @@ const updateUser = (req, res) => {
     res.json(result);
 };
 
-// PATCH
 /**
- * 
+ * PATCH
  * @param {express.Request} req 
  * @param {express.Response} res 
  */
@@ -90,9 +78,8 @@ const updatePartialUser = (req, res) => {
     res.json(result);
 };
 
-// DELETE
 /**
- * 
+ * DELETE
  * @param {express.Request} req 
  * @param {express.Response} res 
  */

@@ -8,8 +8,6 @@ if( !envFound ) {
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-
-// App properties
 module.exports = {
     port: process.env.PORT,
     api: {
@@ -22,3 +20,4 @@ module.exports = {
         path: '/documentation'
     }
 }
+
